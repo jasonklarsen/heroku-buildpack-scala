@@ -15,7 +15,7 @@ config_vars:
 addons:
   heroku-postgresql:dev
 default_process_types:
-  web: server/finagle/target/universal/stage/bin/resonance-finagle -DresPort=\$PORT \$JAVA_OPTS
+  web: client/web/target/universal/stage/bin/client-web -DresPort=\$PORT \$JAVA_OPTS
 
 EOF
 
