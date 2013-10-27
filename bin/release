@@ -3,7 +3,7 @@
 
 BIN_DIR=$(cd $(dirname $0); pwd)
 . $BIN_DIR/common
-BUILD_DIR=$1
+BUILD_DIR="$1/server/finagle"
 
 cat <<EOF
 ---
