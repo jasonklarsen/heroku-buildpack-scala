@@ -15,7 +15,7 @@ config_vars:
 addons:
   heroku-postgresql:dev
 default_process_types:
-  web: client/web/target/universal/stage/bin/resonance-web -DwebPort=\$PORT -Dcom.twitter.finatra.config.env=production \$JAVA_OPTS
+  web: client/web/target/universal/stage/bin/resonance-web -DwebPort=\$PORT -DresUrl=http://resonance-server-finagle.herokuapp.com -Dcom.twitter.finatra.config.env=production \$JAVA_OPTS
 
 EOF
 
