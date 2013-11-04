@@ -3,7 +3,7 @@
 
 BIN_DIR=$(cd $(dirname $0); pwd)
 . $BIN_DIR/common
-BUILD_DIR="$1/server/finagle"
+BUILD_DIR="$1/client/web"
 
 cat <<EOF
 ---
@@ -15,7 +15,7 @@ config_vars:
 addons:
   heroku-postgresql:dev
 default_process_types:
-  web: client/web/target/universal/stage/bin/resonance-web -DwebPort=\$PORT -DresUrl=http://resonance-server-finagle.herokuapp.com -Dcom.twitter.finatra.config.env=production \$JAVA_OPTS
+  web: client/web/target/universal/stage/bin/resonance-web -DwebPort=\$PORT -DresUrl=http://resonance-server-finagle.herokuapp.com -Dcom.twitter.finatra.config.env=production -Dnewrelic.config.file=\$1/client/web/newrelic.yml \$JAVA_OPTS
 
 EOF
 
